@@ -10,6 +10,22 @@
  * @package PhpMyAdmin
  */
 
+
+
+
+
+
+$cfg['PmaAbsoluteUri'] = 'http://devops.educhiro.com:8888/';
+$cfg['ThemeDefault'] = 'fallen';
+
+
+
+
+
+
+
+
+
 /**
  * This is needed for cookie based authentication to encrypt password in
  * cookie. Needs to be 32 chars long.
@@ -26,12 +42,15 @@ $i = 0;
  */
 $i++;
 /* Authentication type */
-$cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = 'localhost';
+$cfg['Servers'][$i]['host'] = 'migration20170210.cu3xnmr728kn.us-west-2.rds.amazonaws.com';
+$cfg['Servers'][$i]['user'] = 'yomateo';
+$cfg['Servers'][$i]['password'] = 'agaeq1429d9';
+
 $cfg['Servers'][$i]['connect_type'] = 'tcp';
 $cfg['Servers'][$i]['compress'] = false;
-$cfg['Servers'][$i]['AllowNoPassword'] = false;
+$cfg['Servers'][$i]['AllowNoPassword'] = true;
 
 /**
  * phpMyAdmin configuration storage settings.
@@ -72,8 +91,8 @@ $cfg['Servers'][$i]['AllowNoPassword'] = false;
 /**
  * Directories for saving/loading files from server
  */
-$cfg['UploadDir'] = '';
-$cfg['SaveDir'] = '';
+$cfg['UploadDir'] = '/www/tmp';
+$cfg['SaveDir'] = '/www/tmp';
 
 /**
  * Whether to display icons or text or both icons and text in table row
@@ -95,7 +114,7 @@ $cfg['SaveDir'] = '';
  * Possible values: 25, 50, 100, 250, 500
  * default = 25
  */
-//$cfg['MaxRows'] = 50;
+$cfg['MaxRows'] = 25;
 
 /**
  * Disallow editing of binary fields
@@ -131,13 +150,13 @@ $cfg['SaveDir'] = '';
  * This requires configuration storage enabled, see above.
  * default = false
  */
-//$cfg['QueryHistoryDB'] = true;
+$cfg['QueryHistoryDB'] = true;
 
 /**
  * When using DB-based query history, how many entries should be kept?
  * default = 25
  */
-//$cfg['QueryHistoryMax'] = 100;
+$cfg['QueryHistoryMax'] = 100;
 
 /**
  * Whether or not to query the user before sending the error report to
@@ -147,7 +166,7 @@ $cfg['SaveDir'] = '';
  * ('ask' | 'always' | 'never')
  * default = 'ask'
  */
-//$cfg['SendErrorReports'] = 'always';
+$cfg['SendErrorReports'] = 'always';
 
 /**
  * You can find more configuration options in the documentation
